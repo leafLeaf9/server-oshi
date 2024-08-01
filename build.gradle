@@ -1,0 +1,52 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.18'
+    id 'io.spring.dependency-management' version '1.1.5'
+}
+
+group = 'com.github.oshi'
+version = '0.0.1'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(8)
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    maven {
+        url 'https://nexus.ruitong369.com:30443/repository/maven-public/'
+    }
+    maven {
+        url 'https://maven.aliyun.com/repository/public/'
+    }
+    maven {
+        url 'https://maven.aliyun.com/repository/spring/'
+    }
+    maven {
+        url 'https://maven.aliyun.com/repository/gradle-plugin/'
+    }
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'com.github.xiaoymin:knife4j-openapi3-spring-boot-starter:4.4.0'
+    implementation 'com.github.oshi:oshi-core:6.6.1'
+    implementation 'com.alibaba.fastjson2:fastjson2:2.0.51'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation 'com.github.xiaoymin:knife4j-openapi3-spring-boot-starter:4.5.0'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

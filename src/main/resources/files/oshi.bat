@@ -1,0 +1,1 @@
+java -jar direction-oshi-0.0.1.jar
