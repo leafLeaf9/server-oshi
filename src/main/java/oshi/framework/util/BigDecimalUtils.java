@@ -1,4 +1,4 @@
-package oshi.framework.utils;
+package oshi.framework.util;
 
 
 import oshi.framework.constant.StringPool;

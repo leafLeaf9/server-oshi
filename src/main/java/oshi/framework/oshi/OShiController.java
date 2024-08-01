@@ -13,7 +13,7 @@ import oshi.device.concrete.server.entity.Hardware;
 import oshi.device.concrete.server.entity.ServerInstance;
 import oshi.framework.constant.StringPool;
 import oshi.framework.remote.RemoteObjectUtil;
-import oshi.framework.utils.BigDecimalUtils;
+import oshi.framework.util.BigDecimalUtils;
 import oshi.hardware.*;
 import oshi.software.os.FileSystem;
 import oshi.software.os.OSFileStore;
@@ -28,7 +28,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static oshi.framework.utils.BigDecimalUtils.getRateDecimal;
+import static oshi.framework.util.BigDecimalUtils.getRateDecimal;
 
 @Slf4j
 @RequestMapping("/monitor/server")

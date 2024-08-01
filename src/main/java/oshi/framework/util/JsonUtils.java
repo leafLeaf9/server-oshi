@@ -1,4 +1,4 @@
-package oshi.framework.utils;
+package oshi.framework.util;
 
 
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -22,7 +22,7 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.TimeZone;
 
-public class JsonUtil {
+public class JsonUtils {
     private static final ObjectMapper objectMapper = initObjectMapper();
     private static final ObjectMapper objectMapperWPF = initObjectMapperWithDateFormat();
 

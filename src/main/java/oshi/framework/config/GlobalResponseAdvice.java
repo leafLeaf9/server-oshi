@@ -10,7 +10,7 @@ import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 import oshi.framework.rest.server.ServerResult;
-import oshi.framework.utils.JsonUtil;
+import oshi.framework.util.JsonUtils;
 
 
 @RestControllerAdvice(basePackages = "oshi")
@@ -28,7 +28,7 @@ public class GlobalResponseAdvice implements ResponseBodyAdvice<Object> {
     public Object beforeBodyWrite(Object body, MethodParameter returnType, MediaType selectedContentType, Class<? extends HttpMessageConverter<?>> selectedConverterType, ServerHttpRequest request, ServerHttpResponse response) {
         // 处理String类型，直接ServerResult.success(body)会报错ServerResult cannot be cast to java.lang.String
         if (body instanceof String) {
-            return JsonUtil.serialObject(ServerResult.success(body));
+            return JsonUtils.serialObject(ServerResult.success(body));
         }
         /*String requestURI = ((ServletServerHttpRequest) request).getServletRequest().getRequestURI();
         if (requestURI.contains("swagger") || requestURI.contains("api-docs")) {
